@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Grid = ({header , children}) => {
 return(
         <div className='md:ml-32 md:mr-24 flex justify-center flex-col items-center md:items-stretch'>

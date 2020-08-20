@@ -16,11 +16,18 @@ import LoadMoreBtn from './elements/LoadMoreBtn';
 import useHomeFetch from './hooks/useHomeFetch'
 import noImage from './images/no_image.jpg'
 import BarLoader from "react-spinners/BarLoader";
+import SmallRow from './elements/SmallRow';
 
 const Home = () => {
   const [{state , loading , error }, fetchMovies] =useHomeFetch()
   const [searchTerm, setSearchTerm] = useState('')
   console.log(state)
+  const searchMovies = search => {
+    const endpoint = search ? `${API_URL}search/movie?api_key=${API_KEY}&query=${search}`
+    : `${API_URL}movie/popular?api_key=${API_KEY}`
+    setSearchTerm(search)
+    fetchMovies(endpoint)
+  }
 
   const loadMoreMovies = ()=> {
 
@@ -33,12 +40,13 @@ const Home = () => {
 
   if(!state.movies[0]) return (
     <>
-    <div  className='flex justify-center items-center pt-64'>
+    <div  className='flex justify-center flex-col items-center pt-64 pb-84'>
     <BarLoader
       size={50}
       color={"#4f8a8b"}
       loading={true}
     />
+    <SmallRow />
     </div>
   </>
   )
@@ -47,7 +55,7 @@ const Home = () => {
   return(
   <>
 
-  <SearchBar />
+  <SearchBar callBack={searchMovies} />
   <Grid header={ searchTerm ? 'Search Result' : 'Popular Movies'}>
     {
       state.movies.map( movie => (
