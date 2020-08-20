@@ -22,15 +22,23 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState('')
   console.log(state)
 
+  const loadMoreMovies = ()=> {
+
+  const searchPoint = `${API_URL}search/movie?api_key=${API_KEY}&query=${searchTerm}&page=${state.currentPage + 1 }`
+  const loadPoint =   `${API_URL}movie/popular?api_key=${API_KEY}&page=${state.currentPage + 1 }`
+  const endpoint = searchTerm ? searchPoint : loadPoint ;
+  fetchMovies(endpoint)
+  }
+
 
   if(!state.movies[0]) return (
     <>
     <div  className='flex justify-center items-center pt-64'>
     <BarLoader
-size={50}
-  color={"#4f8a8b"}
-  loading={true}
-  />
+      size={50}
+      color={"#4f8a8b"}
+      loading={true}
+    />
     </div>
   </>
   )
@@ -57,7 +65,14 @@ size={50}
     }
    
     </Grid> 
-  <LoadMoreBtn text="Load More" />
+    <div className=" flex justify-center items-center">
+    { loading &&  <BarLoader
+      size={50}
+      color={"#4f8a8b"}
+      loading={true}
+    /> }
+    </div>
+ { state.currentPage < state.totalPages && !loading &&( <LoadMoreBtn text="Load More" callBack={loadMoreMovies} />)}
   </>
   )
   }

@@ -14,12 +14,14 @@ const fetchMovies = async endpoint => {
    setLoading(true)
    const result = await (await fetch(endpoint)).json();
   
-
+       const isLoading = endpoint.search('page')
    try{
      setState( prev => (
        {
          ...prev,
-         movies: [...result.results],
+         movies: 
+         isLoading !== -1 ?
+         [...prev.movies , ...result.results] : [...result.results],
          heroImage: prev.heroImage || result.results[0],
          currentPage: result.page,
          totalPages: result.total_pages

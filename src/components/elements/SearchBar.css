@@ -1,0 +1,6 @@
+input[placeholder]:focus { font-size: 1.4rem;
+
+letter-spacing: .1rem ;
+font-weight: 400;
+opacity: .5 ;
+}
