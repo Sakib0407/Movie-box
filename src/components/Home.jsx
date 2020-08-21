@@ -40,7 +40,7 @@ const Home = () => {
 
   if(!state.movies[0]) return (
     <>
-    <div  className='flex justify-center flex-col items-center pt-64 pb-84'>
+    <div  className='flex justify-center flex-col items-center pt-32 pb-110'>
     <BarLoader
       size={50}
       color={"#4f8a8b"}

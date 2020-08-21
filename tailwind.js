@@ -153,6 +153,7 @@ module.exports = {
       '72': '18rem',
       '84': '21rem',
       '96': '24rem',
+      '110' : '30rem',
     },
     backgroundColor: theme => theme('colors'),
     backgroundOpacity: theme => theme('opacity'),
