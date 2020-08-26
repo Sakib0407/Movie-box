@@ -24,7 +24,7 @@ const MovieThumb = ({ image , movieId, movieName , ratings, date , count , popul
 
  
 <Flippy
-    flipOnHover={false}
+    flipOnHover={true}
     flipOnClick={true}
     
     flipDirection="horizontal" 
