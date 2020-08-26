@@ -4,3 +4,6 @@ letter-spacing: .1rem ;
 font-weight: 400;
 opacity: .5 ;
 }
+.br{
+    border-bottom-width: .001px;
+}

@@ -8,6 +8,7 @@ module.exports = {
     screens: {
       sm: '640px',
       md: '768px',
+      ml: '900px',
       lg: '1024px',
       xl: '1280px',
     },
@@ -154,6 +155,8 @@ module.exports = {
       '84': '21rem',
       '96': '24rem',
       '110' : '30rem',
+      '115' : '32rem',
+      '120': '35rem',
     },
     backgroundColor: theme => theme('colors'),
     backgroundOpacity: theme => theme('opacity'),

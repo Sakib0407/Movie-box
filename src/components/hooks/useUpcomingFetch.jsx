@@ -4,7 +4,7 @@ import{
     API_KEY,
   } from '../../config';
   
-const useHomeFetch = () => {
+const useUpcomingFetch = () => {
 
 const [state, setState] = useState({movies : []})
 const [loading, setLoading] = useState(false)
@@ -36,10 +36,10 @@ const fetchMovies = async endpoint => {
   setLoading(false)
 }
 useEffect( () => {
-  fetchMovies(`${API_URL}movie/popular?api_key=${API_KEY}`)
+  fetchMovies(`${API_URL}movie/upcoming?api_key=${API_KEY}`)
 }, [])
 
 return [{state , loading , error }, fetchMovies];
 
 }
-export default useHomeFetch;
+export default useUpcomingFetch;

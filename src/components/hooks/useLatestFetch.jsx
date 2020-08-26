@@ -36,7 +36,7 @@ const fetchMovies = async endpoint => {
   setLoading(false)
 }
 useEffect( () => {
-  fetchMovies(`${API_URL}movie/popular?api_key=${API_KEY}`)
+  fetchMovies(`${API_URL}movie/top_rated?api_key=${API_KEY}`)
 }, [])
 
 return [{state , loading , error }, fetchMovies];

@@ -13,18 +13,18 @@ import SearchBar from './elements/SearchBar';
 import Grid from './elements/Grid';
 import MovieThumb from './elements/MovieThumb';
 import LoadMoreBtn from './elements/LoadMoreBtn';
-import useHomeFetch from './hooks/useHomeFetch'
+import useLatestFetch from './hooks/useLatestFetch'
 import noImage from './images/no_image.jpg'
 import BarLoader from "react-spinners/BarLoader";
 import SmallRow from './elements/SmallRow';
 
-const Home = () => {
-  const [{state , loading , error }, fetchMovies] =useHomeFetch()
+const Latest = () => {
+  const [{state , loading , error }, fetchMovies] =useLatestFetch()
   const [searchTerm, setSearchTerm] = useState('')
   console.log(state)
   const searchMovies = search => {
     const endpoint = search ? `${API_URL}search/movie?api_key=${API_KEY}&query=${search}`
-    : `${API_URL}movie/popular?api_key=${API_KEY}`
+    : `${API_URL}movie/top_rated?api_key=${API_KEY}`
     setSearchTerm(search)
     fetchMovies(endpoint)
   }
@@ -32,7 +32,7 @@ const Home = () => {
   const loadMoreMovies = ()=> {
 
   const searchPoint = `${API_URL}search/movie?api_key=${API_KEY}&query=${searchTerm}&page=${state.currentPage + 1 }`
-  const loadPoint =   `${API_URL}movie/popular?api_key=${API_KEY}&page=${state.currentPage + 1 }`
+  const loadPoint =   `${API_URL}movie/top_rated?api_key=${API_KEY}&page=${state.currentPage + 1 }`
   const endpoint = searchTerm ? searchPoint : loadPoint ;
   fetchMovies(endpoint)
   }
@@ -56,7 +56,7 @@ const Home = () => {
   <>
 
   <SearchBar callBack={searchMovies} />
-  <Grid header={ searchTerm ? 'Search Result' : 'Popular Movies'}>
+  <Grid header={ searchTerm ? 'Search Result' : 'Top Rated'}>
     {
       state.movies.map( movie => (
         <MovieThumb 
@@ -87,4 +87,4 @@ const Home = () => {
   </>
   )
   }
-export default Home;
+export default Latest;
