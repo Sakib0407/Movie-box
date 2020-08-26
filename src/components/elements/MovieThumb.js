@@ -24,14 +24,14 @@ const MovieThumb = ({ image , movieId, movieName , ratings, date , count , popul
 
  
 <Flippy
-    flipOnHover={true}
+    flipOnHover={false}
     flipOnClick={true}
     
     flipDirection="horizontal" 
     style={{  }} 
    >
         <FrontSide className='flex w-72 h-115 m-0  p-0 mb-8'>
-<div className='bg-white flex flex-col h-115 rounded-md overflow-hidden shadow-md w-72 mb-12 transform hover:-translate-y-1 hover:scale-110 transition duration-500 ease-in-out '>
+<div className='bg-white flex flex-col h-115 rounded-md overflow-hidden shadow-md w-72 mb-12 '>
 
  <img className='w-72 h-84' src={image} alt='image' />
  <div className='pl-4 pt-4 pb-4 '>
