@@ -4,7 +4,7 @@ import { API_URL , API_KEY } from '../../config';
 const useMovieFetch = ( movieId ) => {
   
     const [state, setState] = useState({})
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
     const fetchData = useCallback( async () => {
@@ -15,9 +15,16 @@ const useMovieFetch = ( movieId ) => {
         const credits =`${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`
         const result = await (await fetch(endPoint)).json()
         const creditsResult = await (await fetch(credits)).json()
-        console.log( result)
-        console.log( creditsResult)
-    }
+        const directors = creditsResult.crew.filter(
+            member => member.job === 'Director'
+          );
+    
+          setState({
+            ...result,
+            actors: creditsResult.cast,
+            directors,
+          })
+        }
         catch (error)
         {
             setError(error)
