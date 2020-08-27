@@ -17,7 +17,7 @@ width : 100%;
 const MovieThumb = ({ image , movieId, movieName , ratings, date , count , popularity }) => {
     console.log(ratings)
     const [width, setWidth] = useState(window.innerWidth);
-    const breakpoint = 920;
+    const breakpoint = 1000;
     useEffect(() => {
         const handleWindowResize = () => setWidth(window.innerWidth)
         window.addEventListener("resize", handleWindowResize);
