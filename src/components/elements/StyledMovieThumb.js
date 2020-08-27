@@ -8,6 +8,7 @@ export const StyledMovieThumb = styled.div`
     object-fit: cover;
     border-radius: 20px;
     animation: animateMovieThumb 0.5s;
+    margin-top: 2px;
 
     :hover {
       opacity: 0.8;

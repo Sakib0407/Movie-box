@@ -20,6 +20,7 @@ export const StyledMovieInfo = styled.div`
     background: rgb(0, 0, 0, 0.7);
     border-radius: 20px;
     position: relative;
+    margin-left: 2px
   }
 
   .movieinfo-thumb {
@@ -40,7 +41,7 @@ export const StyledMovieInfo = styled.div`
     h1 {
       font-family: 'Abel', sans-serif;
       font-size: 48px;
-      margin: 0;
+      margin-top: 0;
 
       @media screen and (max-width: 1000px) {
         font-size: 32px !important;
@@ -57,6 +58,7 @@ export const StyledMovieInfo = styled.div`
       font-family: 'Abel', sans-serif;
       font-size: 18px;
       line-height: 26px;
+      margin-top: 17px;
     }
   }
 
@@ -75,14 +77,14 @@ export const StyledMovieInfo = styled.div`
     color: #000;
     font-weight: 800;
     border-radius: 25px;
-    margin: 0px 0 0 0;
+    margin-top: 14px ;
   }
 
   .director {
     margin: 0 0 0 40px;
 
     p {
-      margin: 0;
+      margin-top:  14px;
     }
   }
 

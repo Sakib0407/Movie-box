@@ -1,8 +1,9 @@
 input[placeholder]:focus { font-size: 1.4rem;
 
-letter-spacing: .1rem ;
-font-weight: 400;
+letter-spacing: 1 ;
+font-weight: 500;
 opacity: .5 ;
+font-size: 20px;
 }
 .br{
     border-bottom-width: .001px;

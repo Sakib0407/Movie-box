@@ -5,7 +5,7 @@ import React from 'react';
 import MovieInfo from './elements/MovieInfo';
 import MovieInfoBar from './elements/MovieInfoBar';
 import Actor from './elements/Actor';
-import Grid from './elements/Grid';
+import GridActor from './elements/GridActor';
 import BarLoader from "react-spinners/BarLoader";
 
 
@@ -15,11 +15,13 @@ const Movie = ({ movieId }) => {
   const [movie, loading, error] = useMovieFetch(movieId);
 
   if (error) return <div>Something went wrong ...</div>;
-  if (loading)return(   <BarLoader
+  if (loading)return(  <div className='flex justify-center flex-col items-center pt-32 pb-110'> <BarLoader
   size={50}
   color={"#4f8a8b"}
   loading={true}
-/> )
+
+/>
+</div> )
 
   return (
   <>
@@ -30,11 +32,11 @@ const Movie = ({ movieId }) => {
       budget={movie.budget}
       revenue={movie.revenue}
     />
-    <Grid header="Actors">
+    <GridActor header="Actors">
       {movie.actors.map(actor => (
         <Actor key={actor.credit_id} actor={actor} />
       ))}     
-    </Grid>
+    </GridActor>
   </>
   )
 };

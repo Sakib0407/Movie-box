@@ -7,7 +7,7 @@ import Latest from './Latest'
 import Upcoming from './Upcoming'
 
 const App = () =>(
-<div className='bg-background '>
+<div className='bg-background mx-auto '>
  <Header />
  <Router primary={false}>
   <Home path='/'/>

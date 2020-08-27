@@ -10,15 +10,15 @@ import MovieThumb from './MovieThumb';
 import { StyledMovieInfo } from './StyledMovieInfo';
 
 const MovieInfo = ({ movie }) => (
-  <StyledMovieInfo backdrop={movie.backdrop_path}>
+  <StyledMovieInfo className='max-w-screen-xl m-auto rounded-md rounded-b-none  sm:px-4 md:px-0 mt-4 ' backdrop={movie.backdrop_path}>
     <div className="movieinfo-content">
       <div className="movieinfo-thumb">
-      <StyledMovieThumb>
+      <StyledMovieThumb className=''>
     
       <img src={ movie.poster_path
               ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
               : NoImage} alt="moviethumb" />
-    )}
+    
   </StyledMovieThumb>
         
       </div>
@@ -30,7 +30,7 @@ const MovieInfo = ({ movie }) => (
         <div className="rating-director">
           <div>
             <h3>IMDB RATING</h3>
-            <div className="score">{movie.vote_average}</div>
+            <div className="score mt-4">{movie.vote_average}</div>
           </div>
           <div className="director">
             <h3>DIRECTOR{movie.directors.length > 1 ? 'S' : ''}</h3>

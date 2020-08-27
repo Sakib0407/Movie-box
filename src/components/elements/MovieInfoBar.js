@@ -6,7 +6,7 @@ import { calcTime, convertMoney } from '../../helpers';
 import { StyledMovieInfoBar } from './StyledMovieInfoBar';
 
 const MovieInfoBar = ({ time, budget, revenue }) => (
-  <StyledMovieInfoBar>
+  <StyledMovieInfoBar className='max-w-screen-xl m-auto rounded-md rounded-t-none  '>
     <div className="movieinfobar-content ">
       <div className="movieinfobar-content-col">
         <FontAwesome className="fa-time" name="clock-o" size="2x" />
