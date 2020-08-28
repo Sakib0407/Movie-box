@@ -8,7 +8,7 @@ import { StyledMovieInfoBar } from './StyledMovieInfoBar';
 const MovieInfoBar = ({ time, budget, revenue }) => (
   <StyledMovieInfoBar className='max-w-screen-xl m-auto rounded-md rounded-t-none  '>
     <div className="movieinfobar-content ">
-      <div className="movieinfobar-content-col">
+      <div className="movieinfobar-content-col md:ml-32">
         <FontAwesome className="fa-time" name="clock-o" size="2x" />
         <span className="movieinfobar-info">
           Running time: {calcTime(time)}

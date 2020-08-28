@@ -20,7 +20,6 @@ export const StyledMovieInfoBar = styled.div`
     margin: 0 auto;
     color: #fff;
     display : flex;
-     margin-right: 10px;
   }
 
   .movieinfobar-content-col {
