@@ -18,10 +18,11 @@ import noImage from './images/no_image.jpg'
 import BarLoader from "react-spinners/BarLoader";
 import SmallRow from './elements/SmallRow';
 
-const Home = () => {
+
+const Home = ({location}) => {
   const [{state , loading , error }, fetchMovies] =useHomeFetch()
   const [searchTerm, setSearchTerm] = useState('')
-  console.log(state)
+  console.log(location)
   const searchMovies = search => {
     const endpoint = search ? `${API_URL}search/movie?api_key=${API_KEY}&query=${search}`
     : `${API_URL}movie/popular?api_key=${API_KEY}`
