@@ -22,7 +22,7 @@ import SmallRow from './elements/SmallRow';
 const Home = ({location}) => {
   const [{state , loading , error }, fetchMovies] =useHomeFetch()
   const [searchTerm, setSearchTerm] = useState('')
-  console.log(location)
+  console.log(location.pathname)
   const searchMovies = search => {
     const endpoint = search ? `${API_URL}search/movie?api_key=${API_KEY}&query=${search}`
     : `${API_URL}movie/popular?api_key=${API_KEY}`
@@ -41,13 +41,15 @@ const Home = ({location}) => {
 
   if(!state.movies[0]) return (
     <>
-    <div  className='flex justify-center flex-col items-center pt-32 pb-110'>
+    <div  className='flex justify-center flex-col items-center pt-32 pb-110 h-screen'>
     <BarLoader
       size={50}
       color={"#4f8a8b"}
       loading={true}
     />
-    <SmallRow />
+        
+    {
+    <SmallRow />}
     </div>
   </>
   )

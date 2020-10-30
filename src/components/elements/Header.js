@@ -4,7 +4,7 @@ import {Link} from '@reach/router'
 const Header = () => {
   const [ clicked , setClicked] = useState(false)
   const [width, setWidth] = useState(window.innerWidth);
-    const breakpoint = 1026;
+    const breakpoint = 820;
     useEffect(() => {
         const handleWindowResize = () => setWidth(window.innerWidth)
         window.addEventListener("resize", handleWindowResize);
@@ -21,7 +21,7 @@ const Header = () => {
         width < breakpoint ? 
         <>
     
-        <div className=' max-w-screen-xl xxl:max-w-screen-xxl mx-2 py-4 px-4 md:mx-24 md:py-10 flex justify-between items-center md:px-0  flex-row'> 
+        <div className='  max-w-screen-xl py-6 w-11/12 mx-auto  flex justify-between items-center md:px-0  flex-row'> 
         
             <div className="flex justify-evenly items-center">
                 
@@ -53,7 +53,7 @@ const Header = () => {
         
         </> :
     <>
-    <div className=' pt-4  mx-auto max-w-screen-xl  md:py-10 flex justify-between items-center   flex-row'> 
+    <div className=' max-w-screen-xl py-6 w-11/12 mx-auto flex justify-between items-center   flex-row'> 
     
         <div className="flex justify-evenly items-center">
             
@@ -65,7 +65,7 @@ const Header = () => {
         </Link>
         </div>
         <div className = 'flex sm:flex-col sm: md:flex-row'>
-            <div className='hidden lg:flex `${clicked ? block : hidden}`'>
+            <div className=' flex '>
             <Link to='/'>
         <a className='text-gray-600 font-semibold text-xl  font-sans hover:text-gray-900 transform ease-in-outgittransition hover:-translate-y-1 pr-4' > Popular Movies </a>
         </Link>
@@ -77,7 +77,7 @@ const Header = () => {
         </Link>
         
         </div>
-        <svg onClick={toggle} viewBox="0 0 20 20" fill="currentColor" className="view-list w-6 h-6 lg:hidden"><path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" /></svg>
+       
         </div>
     </div>
     
